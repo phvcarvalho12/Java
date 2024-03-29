@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Circulo
+comment1.params=x\ y\ raio
+comment1.target=void\ resultadosCirculo(double,\ double,\ double)
+comment2.params=raio
+comment2.target=double\ calcularArea(double)
+comment3.params=raio
+comment3.target=double\ calcularPerimetro(double)
+numComments=4
