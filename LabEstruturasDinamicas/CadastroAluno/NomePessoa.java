@@ -1,3 +1,5 @@
+package CadastroAluno;
+
 /**
  * Classe para armazenar o nome de uma pessoa. Possibilita inverter nome e limpar
  * espaços extras (operaçoes herdados da classe pai).

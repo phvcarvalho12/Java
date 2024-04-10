@@ -1,3 +1,5 @@
+package CadastroAluno;
+
 
 /**
  * Escreva uma descrição da classe TestaNome aqui.
@@ -13,12 +15,6 @@ public class TestaNome {
         System.out.println("Nome: " + nome.getNome());
         System.out.println("Nome invertido: " + nome.getNomeInvertido());
         System.out.println("Nome Blibliografico: " + nome.getNomeBiblio());
-
-        NomePessoa nome2 = new NomePessoa("Pedro Henrique Vianna Carvalho");
-        
-        System.out.println("Nome: " + nome2.getNome());
-        System.out.println("Nome invertido: " + nome2.getNomeInvertido());
-        System.out.println("Nome Blibliografico: " + nome2.getNomeBiblio());
 
     }
 

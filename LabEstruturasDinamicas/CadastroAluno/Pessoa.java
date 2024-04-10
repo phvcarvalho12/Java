@@ -1,3 +1,5 @@
+package CadastroAluno;
+
 
 /**
  * Escreva uma descrição da classe Pessoa aqui.
