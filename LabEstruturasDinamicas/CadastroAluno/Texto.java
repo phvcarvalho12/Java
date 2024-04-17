@@ -1,9 +1,9 @@
-package CadastroAluno;
+ 
 
 /**
  * Armazena um texto. Inverte texto e limpa espaços extras
  * 
- * @author Julio Arakaki 
+ * @author Pedro Carvalho 
  * @version 1.0 2019/02/29
  */
 public class Texto {

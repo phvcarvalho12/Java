@@ -1,11 +1,11 @@
-package CadastroAluno;
+ 
 
 /**
  * Classe para armazenar o nome de uma pessoa. Possibilita inverter nome e limpar
  * espaços extras (operaçoes herdados da classe pai).
  * Retorna o nome da pessoa em formato de bibliografia
  * 
- * @author Julio Arakaki 
+ * @author Pedro Carvalho 
  * @version 1.0 2024/04/02
  */
 public class NomePessoa {
@@ -42,15 +42,16 @@ public class NomePessoa {
     /**
      * Retorna nome invertido
      * @return sInv nome invertido
-     */
+    
     public String getNomeInvertido(){
-        return this.nome.inverterTexto();
+         return this.nome.inverterTexto();
     }
-
+    */
+    
     /**
      * Retorna nome bibliografico
      * @return sBib nome bibliografico
-     */
+     
     public String getNomeBiblio(){
 
         // Separa as palavras
@@ -67,7 +68,7 @@ public class NomePessoa {
         }
         return sBib;
     }
-
+    */
     /**
      * Verifica se string eh uma String a ser retirada
      * @param s string a ser verificada

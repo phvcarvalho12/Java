@@ -1,24 +1,24 @@
-package CadastroAluno;
+ 
 
 import javax.swing.JOptionPane;
-//import java.util.Scanner;
+import java.util.Scanner;
 
 /**
  * Escreva a descrição da classe TestaTexto aqui.
  * 
- * @author (seu nome) 
+ * @author Pedro Carvalho 
  * @version (número de versão ou data)
  */
 public class TestaTexto {
     public static void main(String[] args) {
         // cria objeto para entrada pelo teclado (standard input) 
-        //Scanner sc = new Scanner(System.in); 
+        Scanner sc = new Scanner(System.in); 
   
-        //System.out.println("Forneca um texto: ");
-        //String texto = sc.nextLine(); 
+        System.out.println("Forneca um texto: ");
+        String texto = sc.nextLine(); 
          
         // Entrada de um nome (atraves do teclado)
-        String texto = JOptionPane.showInputDialog("Forneça um texto: ");
+        //String texto = JOptionPane.showInputDialog("Forneça um texto: ");
 
         // Criacao de uma instancia da classe nome (criacao do objeto)
         Texto txt = new Texto(texto); // Chama o metodo construtor com o texto fornecido

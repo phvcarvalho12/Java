@@ -1,4 +1,4 @@
-package CadastroAluno;
+ 
 
 
 /**
@@ -6,7 +6,7 @@ package CadastroAluno;
  * 
  * @author Pedro Carvalho 
  * @version (um número da versão ou uma data)
- */
+ 
 public class TestaNome {
     public static void main (String args[]){
         
@@ -19,3 +19,4 @@ public class TestaNome {
     }
 
 }
+*/      

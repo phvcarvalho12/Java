@@ -1,4 +1,4 @@
-package CadastroAluno;
+ 
 
 public class Disciplina {
     //variaveis de instancia

@@ -1,10 +1,10 @@
-package CadastroAluno;
+ 
 
 
 /**
  * Escreva uma descrição da classe Aluno aqui.
  * 
- * @author (seu nome) 
+ * @author Pedro Carvalho 
  * @version (um número da versão ou uma data)
  */
 public class Aluno extends Pessoa {
