@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=NomePessoa
-comment0.text=\r\n\ Classe\ para\ armazenar\ o\ nome\ de\ uma\ pessoa.\ Possibilita\ inverter\ nome\ e\ limpar\r\n\ espa\u00E7os\ extras\ (opera\u00E7oes\ herdados\ da\ classe\ pai).\r\n\ Retorna\ o\ nome\ da\ pessoa\ em\ formato\ de\ bibliografia\r\n\ \r\n\ @author\ Pedro\ Carvalho\ \r\n\ @version\ 1.0\ 2024/04/02\r\n
+comment0.text=\r\n\ Classe\ para\ armazenar\ o\ nome\ de\ uma\ pessoa.\ Possibilita\ inverter\ nome\ e\ limpar\r\n\ espa\u00C3\u00A7os\ extras\ (opera\u00C3\u00A7oes\ herdados\ da\ classe\ pai).\r\n\ Retorna\ o\ nome\ da\ pessoa\ em\ formato\ de\ bibliografia\r\n\ \r\n\ @author\ Pedro\ Carvalho\ \r\n\ @version\ 1.0\ 2024/04/02\r\n
 comment1.params=nome
 comment1.target=NomePessoa(java.lang.String)
 comment2.params=

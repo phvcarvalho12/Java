@@ -1,3 +1,5 @@
+package CadastroAluno;
+
 
 /**
  * Representa um cadastro de alunos.
@@ -47,10 +49,6 @@ public class CadastroAlunos {
      */
     public void listar(){
         
-        
-    }
-    
-    public void mostrarAluno() {
         
     }
 }

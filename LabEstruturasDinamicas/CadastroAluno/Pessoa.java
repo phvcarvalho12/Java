@@ -1,3 +1,5 @@
+package CadastroAluno;
+
 
 
 
@@ -18,4 +20,12 @@ public class Pessoa {
         this.id = rg;
     }
     
+    try{
+        
+        super(Aluno);
+        
+        
+    }catch(){
+        
+    }
 }

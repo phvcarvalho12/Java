@@ -1,4 +1,4 @@
-package CadastroAluno;
+ 
 
 public class TestaDisc {
      public static void main(String[] args) {
