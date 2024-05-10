@@ -21,9 +21,9 @@ public class ListaArray implements IArmazenador, Serializable{
      * 
      * @return the vet, arrayList
      */
-    private ArrayList <Object> getLista() {
-        return lista;
-    }
+    //private ArrayList <Object> getLista() {
+       // return lista;
+    //}
 
     /**
      * getQtd
