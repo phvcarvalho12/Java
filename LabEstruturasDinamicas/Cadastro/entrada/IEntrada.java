@@ -9,6 +9,7 @@ package entrada;
 
 public interface IEntrada {
     // interface ou assinaturas de metodos
+    public class JFrameCadastroPessoa{};
     public char opcao();
     public  String lerNome(); 
     public  int lerIdade(); 

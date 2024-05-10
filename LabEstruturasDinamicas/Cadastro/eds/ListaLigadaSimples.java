@@ -183,7 +183,7 @@ public class ListaLigadaSimples implements IArmazenador, Serializable{
 
         No ant = getInicio();
         No ap = getInicio();
-        No aux = null;
+        //No aux = null;
         Object obj = null;
         int k = 0;
 
