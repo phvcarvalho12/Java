@@ -9,6 +9,12 @@ public class Aluno extends Pessoa{
     int serie;
     Disciplina disc[];
 
+    public Aluno(){
+        super("",0);
+    }
+    
+    
+    
     /**
      * Aluno Construtor para iniciar dados do aluno
      *

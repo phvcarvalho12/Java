@@ -1,5 +1,7 @@
 package entrada; 
+ 
 
+import aluno.Aluno;
 import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,7 +19,7 @@ public class EntradaGui implements IEntrada {
 
     public class JFrameCadastroPessoa extends javax.swing.JFrame {
 
-        private Pessoa  pessoa = new Pessoa();
+        private Aluno aluno = new Aluno();
         
         private JTextField opcao;
         private JTextField Nome;
@@ -30,17 +32,17 @@ public class EntradaGui implements IEntrada {
 
         //codigos gerados automaticamente
 
-        //O código do botão salvar é o seguinte: 
+        //O cï¿½digo do botï¿½o salvar ï¿½ o seguinte:  
         private void jBSalvarActionPerformed(java.awt.event.ActionEvent evt) {
             
-            pessoa.setopcao(opcao());
-            pessoa.setNome(lerNome());  
-            pessoa.setIdade(lerIdade());
-            pessoa.setNota(lerNota());
-            pessoa.setRA(lerRA());
-            pessoa.setSerie(lerSerie());
-            pessoa.setQtd(lerQtd());
-            pessoa.setDisc(nomeDaDisc());
+            opcao();
+            lerNome();  
+            lerIdade();
+            lerNota();
+            lerRA();
+            lerSerie();
+            lerQtd();
+            nomeDaDisc();
             
         }
 
