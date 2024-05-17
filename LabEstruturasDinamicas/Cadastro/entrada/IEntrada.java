@@ -10,6 +10,7 @@ package entrada;
 public interface IEntrada {
     // interface ou assinaturas de metodos
     public class JFrameCadastroPessoa{};
+    //public class JFrameCadastroPessoa extends javax.swing.JFrame{}
     public char opcao();
     public  String lerNome(); 
     public  int lerIdade(); 
