@@ -1,4 +1,4 @@
-package aluno;
+package Cadastro.aluno;
 import java.io.Serializable;
 import txt.Texto;
 
@@ -24,7 +24,8 @@ public class Disciplina implements Serializable{
     }
     //Armazena nota da disciplina
     private void setNota(float nota){
-        this.nota = nota;}
+        this.nota = nota;
+    }
     //Retorna a nota da disciplina armazenada
     public float getNota(){
         return this.nota;

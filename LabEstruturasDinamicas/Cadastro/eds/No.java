@@ -1,4 +1,4 @@
-package eds;
+package Cadastro.eds;
 import java.io.Serializable;
 
 public class No implements Serializable{

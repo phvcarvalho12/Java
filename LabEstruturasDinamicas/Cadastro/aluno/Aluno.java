@@ -1,6 +1,7 @@
-package aluno;
-//import java.io.Serializable;
-//import javax.swing.JOptionPane;
+package Cadastro.aluno;
+
+import java.io.Serializable;
+import javax.swing.JOptionPane;
 import pessoa.Pessoa;
 
 public class Aluno extends Pessoa{
@@ -9,12 +10,6 @@ public class Aluno extends Pessoa{
     int serie;
     Disciplina disc[];
 
-    public Aluno(){
-        super("",0);
-    }
-    
-    
-    
     /**
      * Aluno Construtor para iniciar dados do aluno
      *

@@ -1,4 +1,4 @@
-package eds;
+package Cadastro.eds;
 import java.io.Serializable;
 
 public class ListaLigadaSimples implements IArmazenador, Serializable{
@@ -183,7 +183,7 @@ public class ListaLigadaSimples implements IArmazenador, Serializable{
 
         No ant = getInicio();
         No ap = getInicio();
-        //No aux = null;
+        No aux = null;
         Object obj = null;
         int k = 0;
 

@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=VetDin
-comment0.text=\r\n\ "simula"\ um\ array\ dinamico.\r\n
 comment1.params=
 comment1.target=VetDin()
 comment1.text=\r\n\ VetDin\ Construtor\ -\ inicia\ um\ array\ e\ seta\ a\ quantidade\r\n\r\n
@@ -12,7 +11,7 @@ comment11.target=java.lang.String\ toString()
 comment11.text=\r\n\ toString\ retorna\ um\ string\ com\ os\ dados\r\n\r\n\ @return\ string\ com\ os\ dados\r\n
 comment2.params=
 comment2.target=java.lang.Object[]\ getArray()
-comment2.text=\r\n\ retorna\ array\ de\ Object\r\n
+comment2.text=\r\n\ retorna\ array\ de\ Object\r\n\ \r\n\ @return\ vetor\ de\ Object\r\n
 comment3.params=
 comment3.target=int\ getQtd()
 comment3.text=\r\n\ Retorna\ a\ quntidade\r\n\ \r\n\ @return\ int,\ quantidade\ de\ elementos\ no\ array\r\n

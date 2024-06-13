@@ -1,8 +1,6 @@
-package eds;
+package Cadastro.eds;
 import java.io.Serializable;
-/**
- * "simula" um array dinamico.
- */
+
 public class VetDin implements IArmazenador, Serializable{
 
     // Atributos
@@ -22,6 +20,8 @@ public class VetDin implements IArmazenador, Serializable{
 
     /**
      * retorna array de Object
+     * 
+     * @return vetor de Object
      */
     private Object[] getArray() {
         return array;

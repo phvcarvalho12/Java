@@ -1,64 +1,13 @@
-package entrada; 
- 
+package Cadastro.entrada; 
 
-import aluno.Aluno;
 import javax.swing.JOptionPane;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 
-/**
- * Entrada e saida de dados (grafica).
- */
 public class EntradaGui implements IEntrada {
     /**
      * lerNome - entrada de nome (grafica)
      *
      * @return String, nome fornecido
      */
-
-    public class JFrameCadastroPessoa extends javax.swing.JFrame {
-
-        private Aluno aluno = new Aluno();
-        
-        private JTextField opcao;
-        private JTextField Nome;
-        private JTextField Idade;
-        private JTextField Nota;
-        private JTextField RA;
-        private JTextField Serie;
-        private JTextField Qtd;
-        private JTextField Disc;
-
-        //codigos gerados automaticamente
-
-        //O c�digo do bot�o salvar � o seguinte:  
-        private void jBSalvarActionPerformed(java.awt.event.ActionEvent evt) {
-            
-            opcao();
-            lerNome();  
-            lerIdade();
-            lerNota();
-            lerRA();
-            lerSerie();
-            lerQtd();
-            nomeDaDisc();
-            
-        }
-
-        private void jBLimparActionPerformed(java.awt.event.ActionEvent evt) {                                         
-            opcao.setText("");
-            Nome.setText("");
-            Idade.setText("");
-            Nota.setText("");
-            RA.setText("");
-            Serie.setText("");
-            Qtd.setText("");
-            Disc.setText("");
-        }                                        
-
-    }
-
     public String lerNome() {
 
         String nome = null;
@@ -83,7 +32,7 @@ public class EntradaGui implements IEntrada {
             catch(NullPointerException e){
                 JOptionPane.showMessageDialog(null,"\nERRO: Nada foi inserido.\n");}
             catch(Exception e){
-                JOptionPane.showMessageDialog(null,"\nERRO: Sistema IndisponÃ­vel.\n");
+                JOptionPane.showMessageDialog(null,"\nERRO: Sistema Indisponível.\n");
             }
         }  while (!resp);
 
@@ -121,7 +70,7 @@ public class EntradaGui implements IEntrada {
             catch(NullPointerException e){
                 JOptionPane.showMessageDialog(null,"\nERRO: Nada foi inserido.\n");}
             catch(Exception e){
-                JOptionPane.showMessageDialog(null,"\nERRO: Sistema IndisponÃ­vel.\n");
+                JOptionPane.showMessageDialog(null,"\nERRO: Sistema Indisponível.\n");
             }
         }  while (!resp);
 
@@ -160,9 +109,9 @@ public class EntradaGui implements IEntrada {
             catch(NullPointerException e){
                 JOptionPane.showMessageDialog(null,"Operacao cancelada!\n");
                 nota = -1;
-                resp = true;}
+            resp = true;}
             catch(Exception e){
-                JOptionPane.showMessageDialog(null,"\nERRO: Sistema IndisponÃ­vel.\n");
+                JOptionPane.showMessageDialog(null,"\nERRO: Sistema Indisponível.\n");
             }
         }  while (!resp);
 
@@ -197,7 +146,7 @@ public class EntradaGui implements IEntrada {
             catch(NullPointerException e){
                 JOptionPane.showMessageDialog(null,"\nERRO: Nada foi inserido.\n");}
             catch(Exception e){
-                JOptionPane.showMessageDialog(null,"\nERRO: Sistema IndisponÃ­vel.\n");
+                JOptionPane.showMessageDialog(null,"\nERRO: Sistema Indisponível.\n");
             }
         }  while (!resp);
 
@@ -236,7 +185,7 @@ public class EntradaGui implements IEntrada {
             catch(NullPointerException e){
                 JOptionPane.showMessageDialog(null,"\nERRO: Nada foi inserido.\n");}
             catch(Exception e){
-                JOptionPane.showMessageDialog(null,"\nERRO: Sistema IndisponÃ­vel.\n");
+                JOptionPane.showMessageDialog(null,"\nERRO: Sistema Indisponível.\n");
             }
         }  while (!resp);
 
@@ -250,10 +199,10 @@ public class EntradaGui implements IEntrada {
         char op = 'a';
         do{
             try{ 
-                op1 = JOptionPane.showInputDialog("(I) Inserir Aluno\n(R) Remover Aluno\n(L) Listar Alunos\n(S) Sair \n");
-
+                op1 = JOptionPane.showInputDialog("(I) Inserir Aluno\n(R) Remover Aluno\n(L) Listar Alunos\n(1) Salvar Arquivo\n(2) Carregar Arquivo\n(S) Sair");
+                
                 op = op1.charAt(0);
-
+                
                 if (op1 == null){
                     JOptionPane.showMessageDialog(null,"Operacao cancelada!\n");
                 } else if(op1.trim().isEmpty()) {
@@ -267,12 +216,9 @@ public class EntradaGui implements IEntrada {
                 JOptionPane.showMessageDialog(null,"\nERRO: Nao e possivel inserir mais alunos\n");
             }
             catch(NullPointerException e){
-                op = 's'; resp = true;}
+                 op = 's'; resp = true;}
             catch(Exception e){
-                //if(op == ' '){
                 JOptionPane.showMessageDialog(null,"\nERRO: Nada foi inserido.\n");
-                //}
-                //JOptionPane.showMessageDialog(null,"\nERRO: Sistema IndisponÃ­vel.\n");
             }
         }  while (!resp);
 
@@ -305,7 +251,7 @@ public class EntradaGui implements IEntrada {
             catch(NullPointerException e){
                 JOptionPane.showMessageDialog(null,"\nERRO: Nada foi inserido\n");}
             catch(Exception e){
-                JOptionPane.showMessageDialog(null,"\nERRO: Sistema IndisponÃ­vel.\n");
+                JOptionPane.showMessageDialog(null,"\nERRO: Sistema Indisponível.\n");
             }
         }  while (!resp);
 
@@ -340,38 +286,77 @@ public class EntradaGui implements IEntrada {
             catch(NullPointerException e){
                 JOptionPane.showMessageDialog(null,"\nERRO: Nada foi inserido\n");}
             catch(Exception e){
-                JOptionPane.showMessageDialog(null,"\nERRO: Sistema IndisponÃ­vel.\n");
+                JOptionPane.showMessageDialog(null,"\nERRO: Sistema Indisponível.\n");
             }
         }  while (!resp);
 
         return nomeD;
     }
-
+    
     public void msgNaoAlunos(){
         JOptionPane.showMessageDialog(null,"Nao ha aluno cadastrados");
     }
-
+    
     public void listarAlunos(Object item){
         JOptionPane.showMessageDialog(null, item);
     }
-
+    
     public void msgAlunoCad(){
         JOptionPane.showMessageDialog(null,"\nAluno cadastrado com sucesso!!");
     }
-
+    
     public void msgAlunoJaCad(){
         JOptionPane.showMessageDialog(null,"Aluno ja cadastrado");
     }
-
+    
     public void msgAlunoRet(){
-        JOptionPane.showMessageDialog(null,"Aluno retirado.");
+       JOptionPane.showMessageDialog(null,"Aluno retirado.");
     }
-
+    
     public void msgAlunoNEnc(){
         JOptionPane.showMessageDialog(null,"Aluno nao encontrado.");
     }
-
+    
     public void msgOP(){
         JOptionPane.showMessageDialog(null,"\nInsira uma opcao valida.");
+    }
+    
+    public void msgArqSalv(){
+    JOptionPane.showMessageDialog(null,"Arquivo salvo com sucesso");
+    }
+    public void msgArqLido(){
+    JOptionPane.showMessageDialog(null,"Arquivo lido com sucesso");
+    }
+    public void naoDados(){
+        JOptionPane.showMessageDialog(null,"Nao ha dados a serem carregados");
+    }
+    public String nomeArq(){
+    String nomeD = null;
+        boolean resp = false;
+        do{
+            try{ 
+                nomeD = JOptionPane.showInputDialog("Insira nome do arquivo");
+
+                if (nomeD == null){
+                    JOptionPane.showMessageDialog(null,"Operacao cancelada!\n");
+                    resp = true;
+                } else if(nomeD.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null,"\nERRO: Nao houve um nome de arquivo inserido.\n");
+                }else{
+                    resp = true;
+                }
+
+            }
+            catch(ArrayIndexOutOfBoundsException e){
+                JOptionPane.showMessageDialog(null,"\nERRO: Nao e possivel inserir mais alunos\n");
+            }
+            catch(NullPointerException e){
+                JOptionPane.showMessageDialog(null,"\nERRO: Nada foi inserido\n");}
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null,"\nERRO: Sistema Indisponível.\n");
+            }
+        }  while (!resp);
+
+        return nomeD;
     }
 }

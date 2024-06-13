@@ -1,16 +1,13 @@
-package entrada; 
+package Cadastro.entrada; 
 
 /**
  * IEntrada interface para entrada de dados
  * 
- 
  para mudar entrada via console ou grafica, mudar na classe: CadastroAlunos
  */
 
 public interface IEntrada {
     // interface ou assinaturas de metodos
-    public class JFrameCadastroPessoa{};
-    //public class JFrameCadastroPessoa extends javax.swing.JFrame{}
     public char opcao();
     public  String lerNome(); 
     public  int lerIdade(); 
@@ -27,4 +24,8 @@ public interface IEntrada {
     public void msgAlunoRet();
     public void msgAlunoNEnc();
     public void msgOP();
+    public void msgArqSalv();
+    public void msgArqLido();
+    public void naoDados();
+    public String nomeArq();
 }

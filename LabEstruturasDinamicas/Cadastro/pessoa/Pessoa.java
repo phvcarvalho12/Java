@@ -1,4 +1,4 @@
-package pessoa;
+package Cadastro.pessoa;
 import java.io.Serializable;
 
 public class Pessoa implements Serializable{

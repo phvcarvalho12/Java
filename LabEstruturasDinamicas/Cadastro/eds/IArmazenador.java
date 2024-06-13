@@ -1,4 +1,4 @@
-package eds;
+package Cadastro.eds;
 
 public interface IArmazenador{ 
     public void adicionar(Object a);

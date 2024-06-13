@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Disciplina
+comment1.params=nomeDisc\ nota
+comment1.target=Disciplina(java.lang.String,\ float)
+comment1.text=\r\n\ Construtor\ para\ objetos\ da\ classe\ Disciplina\r\n
+comment2.params=nome
+comment2.target=void\ setNomeDisc(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ getNomeDisc()
+comment4.params=nota
+comment4.target=void\ setNota(float)
+comment5.params=
+comment5.target=float\ getNota()
+numComments=6

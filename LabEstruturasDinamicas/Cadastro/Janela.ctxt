@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Janela
+comment0.text=\r\n\ Escreva\ uma\ descri\u00C3\u00A7\u00C3\u00A3o\ da\ classe\ Janela\ aqui.\r\n\ \r\n\ @author\ (seu\ nome)\ \r\n\ @version\ (um\ n\u00C3\u00BAmero\ da\ vers\u00C3\u00A3o\ ou\ uma\ data)\r\n
+comment1.params=titulo
+comment1.target=Janela(java.lang.String)
+comment2.params=ae
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=3

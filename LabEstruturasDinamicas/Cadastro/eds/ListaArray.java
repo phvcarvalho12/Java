@@ -1,7 +1,6 @@
-package eds;
+package Cadastro.eds;
 import java.io.Serializable;
 import java.util.ArrayList;
-
 
 public class ListaArray implements IArmazenador, Serializable{
 
@@ -11,6 +10,7 @@ public class ListaArray implements IArmazenador, Serializable{
     
     /**
      * ListaArray Construtor
+     *
      */
     public ListaArray(){
         setLista(new ArrayList<Object>());
@@ -21,10 +21,10 @@ public class ListaArray implements IArmazenador, Serializable{
      * 
      * @return the vet, arrayList
      */
-    //private ArrayList <Object> getLista() {
-       // return lista;
-    //}
-
+    private ArrayList <Object> getLista() {
+        return lista;
+    }
+ 
     /**
      * getQtd
      * 

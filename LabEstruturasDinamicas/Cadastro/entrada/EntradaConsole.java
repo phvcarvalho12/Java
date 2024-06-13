@@ -1,11 +1,8 @@
-package entrada; 
+package Cadastro.entrada; 
 
 import java.util.Scanner;
 
-/**
- * Entrada de dados (texto).
-para mudar entrada via console ou grafica, mudar nas classes: CadastroAlunos e Controller
- */public class EntradaConsole implements IEntrada {
+public class EntradaConsole implements IEntrada {
     Scanner scan = new Scanner( System.in );
 
     /**
@@ -201,6 +198,8 @@ para mudar entrada via console ou grafica, mudar nas classes: CadastroAlunos e C
         System.out.println("(I) Inserir Aluno");
         System.out.println("(R) Remover Aluno");
         System.out.println("(L) Listar Alunos");
+        System.out.println("(1) Salvar Arquivo");
+        System.out.println("(2) Carregar Arquivo");
         System.out.println("(S) Sair");
         System.out.println("--------------------------");
         char op = scan.next().charAt(0);
@@ -308,4 +307,45 @@ para mudar entrada via console ou grafica, mudar nas classes: CadastroAlunos e C
     public void msgOP(){
         System.out.println("\nInsira uma opcao valida.");
     }
+    
+    public void msgArqSalv(){
+    System.out.println("Arquivo salvo com sucesso");
+    }
+    public void msgArqLido(){
+    System.out.println("Arquivo lido com sucesso");
+    }
+    public void naoDados(){
+        System.out.println("Nao ha dados a serem carregados");
+    }
+    public String nomeArq(){
+        String nomeD = null;
+        boolean resp = false;
+        do{
+            try{
+                System.out.print("Insira nome do arquivo: ");
+                clearBuffer(scan);
+                nomeD = scan.nextLine();
+
+                if (nomeD == null){
+                    System.out.println("\nERRO: Operacao cancelada!\n");
+                } else if(nomeD.trim().isEmpty()) {
+                    System.out.println("\nERRO: Nao houve um nome de arquivo inserido\n");
+                }else{
+                    resp = true;
+                }
+
+            }
+            catch(ArrayIndexOutOfBoundsException e){
+                System.out.println("\nERRO: Nao e possivel inserir mais alunos\n");
+            }
+            catch(NullPointerException e){
+                System.out.println("\nERRO: Nada foi inserido\n");}
+            catch(Exception e){
+                System.out.println("\nERRO: Sistema Indisponível.\n");
+            }
+        }  while (!resp);
+
+        return nomeD;
+    }
+
 }

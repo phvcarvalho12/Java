@@ -1,4 +1,4 @@
-package txt;
+package Cadastro.txt;
 import java.io.Serializable;
 
 public class Texto implements Serializable{
@@ -41,15 +41,17 @@ public class Texto implements Serializable{
     }
 
     /**
-     * //Retorna quantidade de palavras do nome
+     * Retorna quantidade de palavras do nome
      * @return qtd numero de palavras
      */
     public int getQtdePalavras(){
         return (getTxt().split(" ").length);
     }
 
-    
-    //Retira espacos excedentes de uma string
+    /**
+     * Retira espacos excedentes de uma string
+     * @return s string sem espacos excedentes
+     */
     private void limpaEspacosExcedentes(){
         // Elimina espacos do inicio e fim da string
         //try{
@@ -70,8 +72,9 @@ public class Texto implements Serializable{
     //catch(NullPointerException e){System.out.println("teste");}
     }
 
-    
-    //Retorna os atributos como string
+    /**
+     * Retorna os atributos como string
+     */
     public String toString(){
         return(getTxt());
     }

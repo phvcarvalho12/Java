@@ -2,7 +2,7 @@
 comment0.target=ListaArray
 comment1.params=
 comment1.target=ListaArray()
-comment1.text=\r\n\ ListaArray\ Construtor\r\n
+comment1.text=\r\n\ ListaArray\ Construtor\r\n\r\n
 comment2.params=
 comment2.target=java.util.ArrayList\ getLista()
 comment2.text=\r\n\ getLista\r\n\ \r\n\ @return\ the\ vet,\ arrayList\r\n

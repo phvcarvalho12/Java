@@ -1,4 +1,4 @@
-package pessoa;
+package Cadastro.pessoa;
 import txt.Texto;
 import java.io.Serializable;
 
