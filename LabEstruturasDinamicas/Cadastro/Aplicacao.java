@@ -1,3 +1,5 @@
+package Cadastro;
+
 import javax.swing.JFrame;
 public class Aplicacao {
     //exibe o menu
