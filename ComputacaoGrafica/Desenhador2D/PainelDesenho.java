@@ -30,6 +30,8 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
 
     // Para reta
     int x1, y1, x2, y2 , x3 , y3;
+    int xant = 0; 
+    int yant = 0;
 
     // selecionar primeiro click do mouse
     boolean primeiraVez = true;
@@ -133,7 +135,8 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
      *
      * @param g biblioteca para desenhar em modo grafico
      */
-    public void paintComponent(Graphics g) {   
+    public void paintComponent(Graphics g) { 
+        apagarPrimitivos(g);
         desenharPrimitivos(g);
     }
 
@@ -218,6 +221,14 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
     }
 
     public void mouseDragged(MouseEvent e) {
+        Graphics g = getGraphics();  
+        xant = x2;
+        yant = y2;
+        x2 = (int)e.getX();
+        y2 = (int)e.getY();
+
+        paint(g);
+        this.msg.setText("("+e.getX() + ", " + e.getY() + ") - " + getTipo());
     }
 
     /**
@@ -253,6 +264,18 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
         }
         if(tipo == TipoPrimitivo.TRIANGULO){
             FiguraTriangulos.desenharTriangulo(g, x1, y1, x2, y2 , x3 , y3 , "", getEsp(), getCorAtual());
+        }
+    }
+    public void apagarPrimitivos(Graphics g){
+
+        if (tipo == TipoPrimitivo.RETA){
+            FiguraRetas.desenharReta(g, x1, y1, xant, yant, "", getEsp(), getBackground());
+            //FiguraRetas.desenharReta(g, x1, y1, x2, y2, "", getEsp(), getBackground());
+            //FiguraRetas.desenharRetas(g, 10, 3);
+        }
+
+        if (tipo==TipoPrimitivo.CIRCULO){
+            FiguraCirculos.desenharCirculo(g, x1, y1, xant, yant, "", getEsp(), getBackground());
         }
     }
 }
