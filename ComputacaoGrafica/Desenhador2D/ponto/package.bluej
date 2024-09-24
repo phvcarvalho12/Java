@@ -1,9 +1,9 @@
 #BlueJ package file
-dependency1.from=FiguraPontos
-dependency1.to=PontoGr
+dependency1.from=TestaPonto
+dependency1.to=Ponto
 dependency1.type=UsesDependency
-dependency2.from=TestaPonto
-dependency2.to=Ponto
+dependency2.from=FiguraPontos
+dependency2.to=PontoGr
 dependency2.type=UsesDependency
 objectbench.height=137
 objectbench.width=934

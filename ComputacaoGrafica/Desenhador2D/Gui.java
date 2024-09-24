@@ -1,6 +1,8 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JFrame;
@@ -34,6 +36,8 @@ class Gui extends JFrame {
 
     // Painel de desenho
     private PainelDesenho areaDesenho = new PainelDesenho(msg, tipoAtual, corAtual, 10);
+    
+    public ArrayList<Object> salvar = new ArrayList<Object>(500);
 
     // Botoes
     private JButton jbPonto = new JButton("Ponto");

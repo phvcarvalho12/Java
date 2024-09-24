@@ -3,6 +3,7 @@ import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -36,7 +37,6 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
     // selecionar primeiro click do mouse
     boolean primeiraVez = true;
     boolean segundaVez = false;
-
 
     /**
      * Constroi o painel de desenho
@@ -140,7 +140,6 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
         desenharPrimitivos(g);
     }
 
-    
     /**
      * Evento: pressionar do mouse
      *
@@ -203,8 +202,7 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
                 paint(g);
             }
         }
-        
-        
+
         
     }     
 
@@ -228,7 +226,7 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
         y2 = (int)e.getY();
 
         paint(g);
-        this.msg.setText("("+e.getX() + ", " + e.getY() + ") - " + getTipo());
+        this.msg.setText("(" + e.getX() + ", " + e.getY() + ") - " + getTipo());
     }
 
     /**
@@ -266,6 +264,7 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
             FiguraTriangulos.desenharTriangulo(g, x1, y1, x2, y2 , x3 , y3 , "", getEsp(), getCorAtual());
         }
     }
+
     public void apagarPrimitivos(Graphics g){
 
         if (tipo == TipoPrimitivo.RETA){
@@ -276,6 +275,10 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
 
         if (tipo==TipoPrimitivo.CIRCULO){
             FiguraCirculos.desenharCirculo(g, x1, y1, xant, yant, "", getEsp(), getBackground());
+        }
+
+        if (tipo == TipoPrimitivo.RETANGULO){
+            FiguraRetangulos.desenharRetangulo(g, x1, y1, xant, yant, "", getEsp(), getBackground());
         }
     }
 }
