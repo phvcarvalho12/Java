@@ -18,8 +18,8 @@ public class TrianguloGr
     public Ponto P1 , P2 , P3;
     PontoGr ponto;
     FiguraRetas tri = new FiguraRetas();
-    Color c;
-    int esp;
+    public Color c;
+    public int esp;
     public TrianguloGr(int x1 , int y1 , int x2 , int y2, int x3, int y3 , Color cor, String nome, int esp){
         P1 = new Ponto(x1 , y1);
         P2 = new Ponto(x2 , y2);
@@ -27,7 +27,9 @@ public class TrianguloGr
         c = cor; 
         this.esp = esp;
     }
-    
+    public TrianguloGr(){
+        
+    }
    public void desenharTriangulo(Graphics g){
         //descobre o ponto com < y e desenha as retas
         int x1 , x2 , y1 , y2 , x3 , y3;

@@ -13,14 +13,15 @@ public class CirculoGr
 {
     public Ponto P1 , P2;
     PontoGr ponto;
-    Color c;
-    int esp;
+    public Color c;
+    public int esp;
     public CirculoGr(int x1 , int y1 , int x2 , int y2, Color cor, String nome, int esp){
         P1 = new Ponto(x1 , y1);
         P2 = new Ponto(x2 , y2);
         c = cor; 
         this.esp = esp;
     }
+    
     public void desenharCirculo(Graphics g){
         Ponto centro;
         

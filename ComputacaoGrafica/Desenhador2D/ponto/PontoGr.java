@@ -7,13 +7,15 @@ public class PontoGr extends Ponto {
     Color corPto = Color.BLACK; // cor do ponto
     String nomePto = ""; // nome do ponto
     Color corNomePto  = Color.BLACK; // cor do nome (string) do ponto  
-    int diametro = 1; // diametro do ponto, default = 1
-
-    PontoGr(int x, int y){
+    public int diametro ; // diametro do ponto, default = 1
+    public int x , y;
+    public PontoGr(int x, int y){
         super((double)x, (double)y);
         setCorPto(Color.black);     
         setCorNomePto(Color.black);     
-        setNomePto("");     
+        setNomePto("");
+        this.x = x;
+        this.y = y;
     }
 
     PontoGr(int x, int y, Color cor){
@@ -21,6 +23,8 @@ public class PontoGr extends Ponto {
         setCorPto(cor);     
         setCorNomePto(Color.black);     
         setNomePto("");     
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -34,6 +38,8 @@ public class PontoGr extends Ponto {
     public PontoGr(int x, int y, Color corPonto, int diametro){
         this(x, y, corPonto);
         setDiametro(diametro);
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -47,13 +53,18 @@ public class PontoGr extends Ponto {
      */
     public PontoGr(int x, int y, Color corPonto, String nomePonto, int diametro){
         this(x, y, corPonto, diametro);
+        this.diametro = diametro;
         setNomePto(nomePonto);
+        this.x = x;
+        this.y = y;
     }
     PontoGr(int x, int y, Color cor, String str){
         super((double)x, (double)y);
         setCorPto(cor);     
         setCorNomePto(Color.black);     
-        setNomePto(str);     
+        setNomePto(str);  
+        this.x = x;
+        this.y = y;
     }
 
     PontoGr(PontoGr p2d, Color cor){
@@ -112,7 +123,7 @@ public class PontoGr extends Ponto {
     public void setCorNomePto(Color corNomePto) {
         this.corNomePto = corNomePto;
     }
-
+    
     /**
      * @return the diametro
      */
@@ -126,7 +137,7 @@ public class PontoGr extends Ponto {
     public void setDiametro(int diametro) {
         this.diametro = diametro;
     }
-
+   
     /**
      * desenha um ponto utilizando o oval 
      * 

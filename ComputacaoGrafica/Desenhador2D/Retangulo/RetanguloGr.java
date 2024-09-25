@@ -18,13 +18,16 @@ public class RetanguloGr
     public Ponto P1 , P2;
     PontoGr ponto;
     FiguraRetas reta = new FiguraRetas(); 
-    Color c;
-    int esp;
+    public Color c;
+    public int esp;
     public RetanguloGr(int x1 , int y1 , int x2 , int y2, Color cor, String nome, int esp){
         P1 = new Ponto(x1 , y1);
         P2 = new Ponto(x2 , y2);
         c = cor; 
         this.esp = esp;
+    }
+    public RetanguloGr(){
+        
     }
     public void desenharRetangulo(Graphics g){
         //descobre o ponto com < y e desenha as retas

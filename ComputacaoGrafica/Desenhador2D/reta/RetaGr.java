@@ -121,6 +121,7 @@ public class RetaGr extends Reta{
         setNomeReta(str);
     }    
 
+
     /**
      * Altera a cor da reta.
      *

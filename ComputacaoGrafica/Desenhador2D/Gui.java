@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Graphics;
 
 import java.util.ArrayList;
 
@@ -36,8 +37,6 @@ class Gui extends JFrame {
 
     // Painel de desenho
     private PainelDesenho areaDesenho = new PainelDesenho(msg, tipoAtual, corAtual, 10);
-    
-    public ArrayList<Object> salvar = new ArrayList<Object>(500);
 
     // Botoes
     private JButton jbPonto = new JButton("Ponto");
@@ -48,6 +47,8 @@ class Gui extends JFrame {
     private JButton jbSair = new JButton("Sair");
     private JButton jbRet = new JButton("Retangulo");
     private JButton jbTri = new JButton("Triangulo");
+    private JButton jbRedesenhar = new JButton("Redesenhar");
+    
 
     // Entrada (slider) para definir espessura dos primitivos
     private JLabel jlEsp = new JLabel("   Espessura: " + String.format("%-5s", 1));
@@ -76,12 +77,15 @@ class Gui extends JFrame {
         barraComandos.add(jbRet);
         barraComandos.add(jbTri);
         barraComandos.add(jbLimpar); // Botao de Limpar
-        barraComandos.add(jbCor); // Botao de Cores
-
+        barraComandos.add(jbCor);// Botao de Cores
+        
+        
         barraComandos.add(jlEsp); // Label para espessura
         barraComandos.add(jsEsp);    // Slider para espacamento
         areaDesenho.setEsp(espAtual); // define a espessura inicial
-        barraComandos.add(jbSair); // Botao de Cores
+        
+        barraComandos.add(jbRedesenhar);
+        barraComandos.add(jbSair); 
 
         // adiciona os componentes com os respectivos layouts
         add(barraComandos, BorderLayout.NORTH);                
@@ -130,6 +134,11 @@ class Gui extends JFrame {
 
         jbSair.addActionListener(e -> {
             System.exit(0);
-        });        
+        });    
+        
+        jbRedesenhar.addActionListener(e ->{
+            Graphics g = getGraphics();
+            areaDesenho.redesenharPrimitivos(); 
+        });
     }
 }

@@ -1,7 +1,6 @@
 package reta;
 import java.awt.Color;
 import java.awt.Graphics;
-import PainelDesenho;
 
 /**
  * Desenha figuras com retas.
@@ -25,7 +24,6 @@ public class FiguraRetas {
     public static void desenharReta(Graphics g, int x1, int y1, int x2, int y2, String nome, int esp, Color cor){
        RetaGr r = new RetaGr(x1, y1, x2, y2, cor, nome, esp);
         r.desenharReta(g );
-        salvar.add(r);
     }
 
     /**

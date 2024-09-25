@@ -1,16 +1,16 @@
 #BlueJ package file
-dependency1.from=TestaPonto
-dependency1.to=Ponto
+dependency1.from=FiguraPontos
+dependency1.to=PontoGr
 dependency1.type=UsesDependency
-dependency2.from=FiguraPontos
-dependency2.to=PontoGr
+dependency2.from=TestaPonto
+dependency2.to=Ponto
 dependency2.type=UsesDependency
-objectbench.height=137
-objectbench.width=934
+objectbench.height=136
+objectbench.width=935
 package.divider.horizontal=0.6
-package.divider.vertical=0.8479408658922915
-package.editor.height=796
-package.editor.width=812
+package.divider.vertical=0.847972972972973
+package.editor.height=797
+package.editor.width=815
 package.editor.x=476
 package.editor.y=4
 package.frame.height=1047
