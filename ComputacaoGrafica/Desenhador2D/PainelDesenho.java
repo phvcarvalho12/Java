@@ -34,9 +34,9 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
 
     // Para ponto
     int x, y;
-    
+
     ArrayList<Object> figuras = new ArrayList<Object>();
-    
+
     // Para reta
     int x1, y1, x2, y2 , x3 , y3;
     int xant = 0; 
@@ -211,9 +211,7 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
             }
         }
 
-        
     }     
-
     public void mouseReleased(MouseEvent e) { 
     }           
 
@@ -228,14 +226,13 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
 
     public void mouseDragged(MouseEvent e) {
         if(tipo != TipoPrimitivo.TRIANGULO){
-            
-        
+
             Graphics g = getGraphics();  
             xant = x2;
             yant = y2;
             x2 = (int)e.getX();
             y2 = (int)e.getY();
-            
+
             paint(g);
             this.msg.setText("(" + e.getX() + ", " + e.getY() + ") - " + getTipo());
         }
@@ -289,27 +286,33 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
 
     public void apagarPrimitivos(Graphics g){
 
-        if (tipo == TipoPrimitivo.RETA){
-            FiguraRetas.desenharReta(g, x1, y1, xant, yant, "", getEsp(), getBackground());
-            figuras.remove(figuras.size() - 1 );
+        int tamanho = figuras.size() -1;
+        if(figuras.size() == 0){
+            tamanho = 0;
+        }
+        if(tamanho != 0){
+            if (tipo == TipoPrimitivo.RETA){
+                FiguraRetas.desenharReta(g, x1, y1, xant, yant, "", getEsp(), getBackground());
+                figuras.remove(tamanho);
+            }
+
+            if (tipo==TipoPrimitivo.CIRCULO){
+                FiguraCirculos.desenharCirculo(g, x1, y1, xant, yant, "", getEsp(), getBackground());
+                figuras.remove(tamanho);
+            }
+
+            if (tipo == TipoPrimitivo.RETANGULO){
+                FiguraRetangulos.desenharRetangulo(g, x1, y1, xant, yant, "", getEsp(), getBackground());
+                figuras.remove(tamanho);
+            }   
         }
 
-        if (tipo==TipoPrimitivo.CIRCULO){
-            FiguraCirculos.desenharCirculo(g, x1, y1, xant, yant, "", getEsp(), getBackground());
-            figuras.remove(figuras.size() - 1 );
-        }
-
-        if (tipo == TipoPrimitivo.RETANGULO){
-            FiguraRetangulos.desenharRetangulo(g, x1, y1, xant, yant, "", getEsp(), getBackground());
-            figuras.remove(figuras.size() -1  );
-        }
-        
-        
     }
+
     public void redesenharPrimitivos(){
         Object n;
         Graphics g = getGraphics();
-        for(int i = 0 ; i < figuras.size() ; i++){
+        for(int i = 0; i <= figuras.size(); i++){
             n = figuras.get(i);
             if(n instanceof PontoGr){
                 PontoGr ponto = (PontoGr)n;
@@ -319,14 +322,15 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
                 FiguraRetas.desenharReta(g, (int)reta.getP1().getX(), (int)reta.getP1().getY(), (int)reta.getP2().getX(), (int)reta.getP2().getY(), "", reta.getEspReta(), reta.getCorReta());
             }else if(n instanceof CirculoGr){
                 CirculoGr circulo = (CirculoGr)n;
-                FiguraCirculos.desenharCirculo(g, (int)circulo.P1.getX(), (int)circulo.P1.getY(), (int)circulo.P2.getX(), (int)circulo.P2.getY(), "", circulo.esp , circulo.c);
+                FiguraCirculos.desenharCirculo(g, (int)circulo.P1.getX(), (int)circulo.P1.getY(), (int)circulo.P2.getX(), (int)circulo.P2.getY(), "", circulo.esp, circulo.c);
             }else if(n instanceof RetanguloGr){
                 RetanguloGr retangulo = (RetanguloGr)n;
                 FiguraRetangulos.desenharRetangulo(g, (int)retangulo.P1.getX(), (int)retangulo.P1.getY(), (int)retangulo.P2.getX(), (int)retangulo.P2.getY(), "", retangulo.esp, retangulo.c);
             }else if(n instanceof TrianguloGr){
                 TrianguloGr triangulo = (TrianguloGr)n;
-                FiguraTriangulos.desenharTriangulo(g, (int)triangulo.P1.getX(), (int)triangulo.P1.getY(), (int)triangulo.P2.getX(), (int)triangulo.P2.getY() , (int)triangulo.P3.getX() , (int)triangulo.P3.getY() , "", triangulo.esp, triangulo.c);
+                FiguraTriangulos.desenharTriangulo(g, (int)triangulo.P1.getX(), (int)triangulo.P1.getY(), (int)triangulo.P2.getX(), (int)triangulo.P2.getY(), (int)triangulo.P3.getX(), (int)triangulo.P3.getY(), "", triangulo.esp, triangulo.c);
             }
+            
         }
     }
 }
