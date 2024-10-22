@@ -145,6 +145,7 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
      */
     public void paintComponent(Graphics g) { 
         apagarPrimitivos(g);
+        
         desenharPrimitivos(g);
     }
 
@@ -158,10 +159,10 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
         if (tipo == TipoPrimitivo.PONTO){
             x = e.getX();
             y = e.getY();
-            figuras.add(new PontoGr(x, y, getCorAtual(), getEsp()));
+            PontoGr p = new PontoGr(x, y, getCorAtual(), getEsp());
+            figuras.add(p);
             paint(g);
         } else if (tipo == TipoPrimitivo.RETA){
-
             if (primeiraVez == true) {
                 x1 = (int)e.getX();
                 y1 = (int)e.getY();
@@ -170,7 +171,8 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
                 x2 = (int)e.getX();
                 y2 = (int)e.getY();
                 primeiraVez = true;
-                figuras.add(new RetaGr(x1, y1, x2, y2, getCorAtual(), getEsp()));
+                RetaGr r = new RetaGr(x1, y1 , x2 , y2 , getCorAtual() , getEsp());
+                figuras.add(r);
                 paint(g);
             }
         }else if(tipo == TipoPrimitivo.CIRCULO){
@@ -182,7 +184,8 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
                 x2 = (int)e.getX();
                 y2 = (int)e.getY();
                 primeiraVez = true;
-                figuras.add(new CirculoGr(x1, y1, x2, y2, getCorAtual(), "", getEsp()));
+                CirculoGr c = new CirculoGr(x1, y1, x2, y2, getCorAtual(), "", getEsp());
+                figuras.add(c);
                 paint(g);
             }
         }else if(tipo == TipoPrimitivo.RETANGULO){
@@ -194,7 +197,8 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
                 x2 = (int)e.getX();
                 y2 = (int)e.getY();
                 primeiraVez = true;
-                figuras.add(new RetanguloGr(x1, y1, x2, y2, getCorAtual(), "", getEsp()));
+                RetanguloGr ret = new RetanguloGr(x1, y1, x2, y2, getCorAtual(), "", getEsp());
+                figuras.add(ret);
                 paint(g);
             }
         }else if(tipo == TipoPrimitivo.TRIANGULO){
@@ -211,7 +215,8 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
                 x3 = (int)e.getX();
                 y3 = (int)e.getY();
                 primeiraVez = true;
-                figuras.add(new TrianguloGr(x1, y1, x2, y2 , x3 , y3 , getCorAtual(), "", getEsp()));
+                TrianguloGr t = new TrianguloGr(x1, y1, x2, y2 , x3 , y3 , getCorAtual(), "", getEsp());
+                figuras.add(t);
                 paint(g);
             }
         }
@@ -221,24 +226,27 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
         Graphics g = getGraphics(); 
         if (tipo == TipoPrimitivo.RETA){
             x2 = (int) e.getX();
-            y2 = (int) e.getY(); //pega o segundo ponto
-            primeiraVez = false; //+++++++++++++++++++++++++++++++
+            y2 = (int) e.getY();
+            primeiraVez = true;
+            RetaGr r = new RetaGr(x1, y1 , x2 , y2 , getCorAtual() , getEsp());
+            figuras.add(r);
             paint(g); //desenha a reta
-            figuras.add(new RetaGr(x1, y1, x2, y2, getCorAtual(), getEsp()));
         }
         if(tipo == TipoPrimitivo.CIRCULO){
             x2 = (int) e.getX();
             y2 = (int) e.getY();
-            primeiraVez = false;
+            primeiraVez = true;
+            CirculoGr c = new CirculoGr(x1, y1, x2, y2, getCorAtual(), "", getEsp());
+            figuras.add(c);
             paint(g); //desenha o circulo
-            figuras.add(new CirculoGr(x1, y1, x2, y2, getCorAtual(), "", getEsp()));
         }
         if(tipo == TipoPrimitivo.RETANGULO){
             x2 = (int) e.getX();
-            y2 = (int) e.getY(); //pega o segundo ponto
-            primeiraVez = false;
+            y2 = (int) e.getY(); 
+            primeiraVez = true;
+            RetanguloGr ret = new RetanguloGr(x1, y1, x2, y2, getCorAtual(), "", getEsp());
+            figuras.add(ret);
             paint(g); //desenha o retangulo
-            figuras.add(new RetanguloGr(x1, y1, x2, y2, getCorAtual(), "", getEsp()));
         }
     }           
 
@@ -252,7 +260,7 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
     }
 
     public void mouseDragged(MouseEvent e) {
-        /* if(tipo != TipoPrimitivo.TRIANGULO){
+        if(tipo != TipoPrimitivo.TRIANGULO){
 
             Graphics g = getGraphics();  
             xant = x2;
@@ -262,16 +270,7 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
 
             paint(g);
             this.msg.setText("(" + e.getX() + ", " + e.getY() + ") - " + getTipo());
-        } */
-        Graphics g = getGraphics();
-        if((tipo == TipoPrimitivo.RETA) || (tipo == TipoPrimitivo.CIRCULO) || (tipo == TipoPrimitivo.RETANGULO)){
-            xant = x2;
-            yant = y2;
-            x2 = (int) e.getX();
-            y2 = (int) e.getY();
-            paint(g);
         }
-        this.msg.setText("("+e.getX() + ", " + e.getY() + ") - " + getTipo());
     }
 
     /**
@@ -280,8 +279,8 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
      * @param e dados do evento do mouse
      */
     public void mouseMoved(MouseEvent e) {
-        //this.msg.setText("("+e.getX() + ", " + e.getY() + ") - " + getTipo());
-        this.msg.setText("("+e.getX() + ", " + e.getY() + ")");
+        this.msg.setText("("+e.getX() + ", " + e.getY() + ") - " + getTipo());
+        //this.msg.setText("("+e.getX() + ", " + e.getY() + ")");
     }
 
     /**
@@ -294,14 +293,12 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
             FiguraPontos.desenharPonto(g, x, y, "", getEsp(), getCorAtual());
             //PontoGr p = new PontoGr(x, y, getCorAtual(), getEsp());
             //figuras.add(p);
-            //FiguraPontos.desenharPontos(g, 50, 20);
         }
 
         if (tipo == TipoPrimitivo.RETA){
             FiguraRetas.desenharReta(g, x1, y1, x2, y2, "", getEsp(), getCorAtual());
             //RetaGr r = new RetaGr(x1, y1, x2, y2, getCorAtual(), getEsp());
             //figuras.add(r);
-            //FiguraRetas.desenharRetas(g, 10, 3);
         }
 
         if (tipo==TipoPrimitivo.CIRCULO){
@@ -322,31 +319,29 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
     }
 
     public void apagarPrimitivos(Graphics g){
-
+        Object n;
         int tamanho = figuras.size() -1;
-        if(figuras.size() == 0){
+        if(figuras.size() == -1){
             tamanho = 0;
         }
-        if(tamanho != 0){
+        //if(tamanho != 0){
             if (tipo == TipoPrimitivo.RETA){
                 FiguraRetas.desenharReta(g, x1, y1, xant, yant, "", getEsp(), getBackground());
-                figuras.remove(tamanho);
+                //figuras.remove(tamanho);
             }
 
             if (tipo==TipoPrimitivo.CIRCULO){
                 FiguraCirculos.desenharCirculo(g, x1, y1, xant, yant, "", getEsp(), getBackground());
-                figuras.remove(tamanho);
+                //figuras.remove(tamanho);
             }
 
             if (tipo == TipoPrimitivo.RETANGULO){
                 FiguraRetangulos.desenharRetangulo(g, x1, y1, xant, yant, "", getEsp(), getBackground());
-                figuras.remove(tamanho);
+                //figuras.remove(tamanho);
             }   
-        }
-        Object n;
-        //Graphics g = getGraphics();
-        for(int i = 0; i <= figuras.size(); i++){
-            n = figuras.get(i);
+             for(int i = 0; i < figuras.size(); i++){
+                 
+                n = figuras.get(i);
             if(n instanceof PontoGr){
                 PontoGr ponto = (PontoGr)n;
                 FiguraPontos.desenharPonto(g, ponto.x, ponto.y, "", ponto.diametro, getCorAtual());
@@ -365,6 +360,7 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
             }
             
         }
+        //}
     }
 
     /**
@@ -373,6 +369,10 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
      */
     public void apagarFiguras(){
         Graphics g = getGraphics();
+        int tamanho = figuras.size();
+        while(figuras.size() > 0){
+           figuras.remove(0); 
+        }
         g.setColor(getBackground());
         g.drawRect(0, 0, 700, 600);
         g.fillRect(0, 0, 700, 600);
@@ -381,7 +381,7 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
     public void redesenharPrimitivos(){
         Object n;
         Graphics g = getGraphics();
-        for(int i = 0; i <= figuras.size(); i++){
+        for(int i = 0; i < figuras.size(); i++){
             n = figuras.get(i);
             if(n instanceof PontoGr){
                 PontoGr ponto = (PontoGr)n;

@@ -116,6 +116,7 @@ class Gui extends JFrame {
         });
         jbLimpar.addActionListener(e -> {
             areaDesenho.removeAll();
+            areaDesenho.apagarFiguras();
             jsEsp.setValue(1); // inicia slider (necessario para limpar ultimo primitivoda tela) 
             repaint();        
         });        
