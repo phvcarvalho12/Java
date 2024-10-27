@@ -48,6 +48,8 @@ class Gui extends JFrame {
     private JButton jbRet = new JButton("Retangulo");
     private JButton jbTri = new JButton("Triangulo");
     private JButton jbRedesenhar = new JButton("Redesenhar");
+    private JButton jbSelecionar = new JButton("selecionar");
+    
     
 
     // Entrada (slider) para definir espessura dos primitivos
@@ -76,6 +78,7 @@ class Gui extends JFrame {
         barraComandos.add(jbCirculo);
         barraComandos.add(jbRet);
         barraComandos.add(jbTri);
+        barraComandos.add(jbSelecionar);
         barraComandos.add(jbLimpar); // Botao de Limpar
         barraComandos.add(jbCor);// Botao de Cores
         
@@ -112,6 +115,10 @@ class Gui extends JFrame {
         });
         jbTri.addActionListener(e ->{
             tipoAtual = TipoPrimitivo.TRIANGULO;
+            areaDesenho.setTipo(tipoAtual);
+        });
+        jbSelecionar.addActionListener(e->{
+            tipoAtual = TipoPrimitivo.SELECIONAR;
             areaDesenho.setTipo(tipoAtual);
         });
         jbLimpar.addActionListener(e -> {
