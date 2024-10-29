@@ -31,7 +31,8 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
     TipoPrimitivo tipo; // Tipo do primitivo
     Color corAtual;       // Cor atual do primitivo
     int esp;              // Diametro do ponto
-
+    
+    public static int transf;
     // Para ponto
     int x, y;
 
@@ -224,9 +225,17 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
             y = (int)e.getY();
             
             int posicao = selecionarFigura(x ,y);
-
             apagarFigura(posicao);
-
+            
+            /*if(transf == 0){
+                
+            }
+            else if(transf == 1){
+                x2 = (int)e.getX();
+                y2 = (int)e.getY();
+                
+                translacao(posicao , x2 , y2);
+            }*/
         }
     }     
     public void mouseReleased(MouseEvent e) {
@@ -487,4 +496,36 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
                 figuras.remove(posicao);
             }
     }
+    
+    /*public void translacao(int posicao , int x1 , int y1){
+        Graphics g = getGraphics();
+        int dx , dy;
+        if(posicao != -1){
+                Object n = figuras.get(posicao);
+                if(n instanceof PontoGr){
+                    PontoGr ponto = (PontoGr)n;
+                    ponto.setX(x);
+                    ponto.setY(y);
+                }else if(n instanceof RetaGr){
+                    RetaGr reta = (RetaGr)n;
+                    dx = (int)reta.getP1().getX() - x1;
+                    dy = (int)reta.getP1().getY() - y1;
+                    
+                    reta.getP1().setX(reta.getP1().getX() + dx);
+                    reta.getP1().setX(reta.getP1().getY() + dy);
+                    
+                    reta.getP2().setX(reta.getP2().getX() + dx);
+                    reta.getP2().setY(reta.getP2().getY() + dy);
+                    
+                }else if(n instanceof CirculoGr){
+    
+                }else if(n instanceof RetanguloGr){
+                    
+                }else if(n instanceof TrianguloGr){
+                                    
+                }
+                
+            }
+        
+    }*/
 }

@@ -48,7 +48,7 @@ class Gui extends JFrame {
     private JButton jbRet = new JButton("Retangulo");
     private JButton jbTri = new JButton("Triangulo");
     private JButton jbRedesenhar = new JButton("Redesenhar");
-    private JButton jbSelecionar = new JButton("Selecionar");
+    private JButton jbSelecionar = new JButton("Apagar");
     
     
 
@@ -120,6 +120,7 @@ class Gui extends JFrame {
         jbSelecionar.addActionListener(e->{
             tipoAtual = TipoPrimitivo.SELECIONAR;
             areaDesenho.setTipo(tipoAtual);
+           // PainelDesenho.transf = 1;
         });
         jbLimpar.addActionListener(e -> {
             areaDesenho.removeAll();
