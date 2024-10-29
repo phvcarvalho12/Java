@@ -48,7 +48,7 @@ class Gui extends JFrame {
     private JButton jbRet = new JButton("Retangulo");
     private JButton jbTri = new JButton("Triangulo");
     private JButton jbRedesenhar = new JButton("Redesenhar");
-    private JButton jbSelecionar = new JButton("selecionar");
+    private JButton jbSelecionar = new JButton("Selecionar");
     
     
 

@@ -222,12 +222,13 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
         }else if(tipo == TipoPrimitivo.SELECIONAR){
             x = (int)e.getX();
             y = (int)e.getY();
+            
             int posicao = selecionarFigura(x ,y);
-            System.out.println("posicao da figura no array:"+posicao);
+
+            apagarFigura(posicao);
+
         }
-
     }     
-
     public void mouseReleased(MouseEvent e) {
         Graphics g = getGraphics(); 
         if (tipo == TipoPrimitivo.RETA){
@@ -333,17 +334,14 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
         //if(tamanho != 0){
         if (tipo == TipoPrimitivo.RETA){
             FiguraRetas.desenharReta(g, x1, y1, xant, yant, "", getEsp(), getBackground());
-            //figuras.remove(tamanho);
         }
 
         if (tipo==TipoPrimitivo.CIRCULO){
             FiguraCirculos.desenharCirculo(g, x1, y1, xant, yant, "", getEsp(), getBackground());
-            //figuras.remove(tamanho);
         }
 
         if (tipo == TipoPrimitivo.RETANGULO){
             FiguraRetangulos.desenharRetangulo(g, x1, y1, xant, yant, "", getEsp(), getBackground());
-            //figuras.remove(tamanho);
         }   
         for(int i = 0; i < figuras.size(); i++){
 
@@ -380,8 +378,8 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
             figuras.remove(0); 
         }
         g.setColor(getBackground());
-        g.drawRect(0, 0, 700, 600);
-        g.fillRect(0, 0, 700, 600);
+        g.drawRect(0, 0, 900, 800);
+        g.fillRect(0, 0, 900, 800);
     }
 
     public void redesenharPrimitivos(){
@@ -428,46 +426,30 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
                             if(ponto.x == i && ponto.y == j){
                                 pos = k;
                                 achou = true;
-                                p = new PontoGr(i , j , Color.RED ,30);
-                                p.desenharPonto(g);
-                                System.out.println("x = "+ i+"y = "+ j);
                             }
                         }else if(c instanceof RetaGr){
                             RetaGr reta = (RetaGr)c;
                             if((reta.getP1().getX() == i && reta.getP1().getY() == j)||(reta.getP2().getX() == i && reta.getP2().getY() == j)){
                                 pos = k;
                                 achou = true;
-                                p = new PontoGr(i , j , Color.RED ,30);
-                                p.desenharPonto(g);
-                                System.out.println("x = "+ i+"y = "+ j);
                             }
-
                         }else if(c instanceof CirculoGr){
                             CirculoGr circulo = (CirculoGr)c;
                             if((circulo.P1.getX() == i && circulo.P1.getY() == j)||(circulo.P2.getX() == i && circulo.P2.getY() == j)){
                                 pos = k; 
-                                achou = true;
-                                p = new PontoGr(i , j , Color.RED ,30);
-                                p.desenharPonto(g);
-                                System.out.println("x = "+ i+"y = "+ j);
+                                achou = true; 
                             }
                         }else if(c instanceof RetanguloGr){
                             RetanguloGr retangulo = (RetanguloGr)c;
                             if((retangulo.P1.getX() == i && retangulo.P1.getY() == j)||(retangulo.P2.getX() == i && retangulo.P2.getY() == j)){
                                 pos = k; 
                                 achou = true;
-                                p = new PontoGr(i , j , Color.RED ,30);
-                                p.desenharPonto(g);
-                                System.out.println("x = "+ i+"y = "+ j);
                             }
                         }else if(c instanceof TrianguloGr){
                             TrianguloGr triangulo = (TrianguloGr)c;
                             if((triangulo.P1.getX() == i && triangulo.P1.getY() == j)||(triangulo.P2.getX() == i && triangulo.P2.getY() == j)||(triangulo.P3.getX() == i && triangulo.P3.getY() == j)){
                                 pos = k; 
                                 achou = true;
-                                p = new PontoGr(i , j , Color.RED ,30);
-                                p.desenharPonto(g);
-                                System.out.println("x = "+ i+"y = "+ j);
                             }
                         }
                         k++;
@@ -480,5 +462,29 @@ public class PainelDesenho extends JPanel implements MouseListener, MouseMotionL
             }
         }
         return pos;
+    }
+    public void apagarFigura(int posicao){
+        Graphics g = getGraphics();
+        if(posicao != -1){
+                Object n = figuras.get(posicao);
+
+                if(n instanceof PontoGr){
+                    PontoGr ponto = (PontoGr)n;
+                    FiguraPontos.desenharPonto(g, ponto.x, ponto.y, "", ponto.diametro, getBackground());
+                }else if(n instanceof RetaGr){
+                    RetaGr reta = (RetaGr)n;
+                    FiguraRetas.desenharReta(g, (int)reta.getP1().getX(), (int)reta.getP1().getY(), (int)reta.getP2().getX(), (int)reta.getP2().getY(), "", reta.getEspReta(), getBackground());
+                }else if(n instanceof CirculoGr){
+                    CirculoGr circulo = (CirculoGr)n;
+                    FiguraCirculos.desenharCirculo(g, (int)circulo.P1.getX(), (int)circulo.P1.getY(), (int)circulo.P2.getX(), (int)circulo.P2.getY(), "", circulo.esp, getBackground());
+                }else if(n instanceof RetanguloGr){
+                    RetanguloGr retangulo = (RetanguloGr)n;
+                    FiguraRetangulos.desenharRetangulo(g, (int)retangulo.P1.getX(), (int)retangulo.P1.getY(), (int)retangulo.P2.getX(), (int)retangulo.P2.getY(), "", retangulo.esp, getBackground());
+                }else if(n instanceof TrianguloGr){
+                    TrianguloGr triangulo = (TrianguloGr)n;
+                    FiguraTriangulos.desenharTriangulo(g, (int)triangulo.P1.getX(), (int)triangulo.P1.getY(), (int)triangulo.P2.getX(), (int)triangulo.P2.getY(), (int)triangulo.P3.getX(), (int)triangulo.P3.getY(), "", triangulo.esp, getBackground());
+                }
+                figuras.remove(posicao);
+            }
     }
 }
