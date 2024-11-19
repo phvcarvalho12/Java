@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Controller
+comment0.text=\r\n\ Escreva\ uma\ descri\u00E7\u00E3o\ da\ classe\ controller\ aqui.\r\n\ \r\n\ @author\ (seu\ nome)\ \r\n\ @version\ (um\ n\u00FAmero\ da\ vers\u00E3o\ ou\ uma\ data)\r\n
+comment1.params=imagem
+comment1.target=java.awt.image.BufferedImage\ filtroCinza(java.awt.image.BufferedImage)
+comment2.params=imagem
+comment2.target=java.awt.image.BufferedImage\ filtroBinario(java.awt.image.BufferedImage)
+comment3.params=imagem
+comment3.target=java.awt.image.BufferedImage\ filtroPassaBaixa(java.awt.image.BufferedImage)
+comment4.params=imagem
+comment4.target=java.awt.image.BufferedImage\ filtroPassaAlta(java.awt.image.BufferedImage)
+comment5.params=imagem
+comment5.target=void\ criarHistograma(java.awt.image.BufferedImage)
+comment6.params=g
+comment6.target=void\ paintComponent(java.awt.Graphics)
+numComments=7
